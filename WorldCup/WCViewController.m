@@ -8,7 +8,7 @@
 
 #import "WCViewController.h"
 
-@interface WCViewController ()
+@interface WCViewController () <UITableViewDelegate>
 
 @end
 
