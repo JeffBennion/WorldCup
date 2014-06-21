@@ -13,7 +13,7 @@
 
 + (ScoreController *)sharedInstance;
 
-- (void)getInfoCompletion:(void (^)(BOOL success))completion;
+- (void)getInfoCompletion:(void (^)(BOOL success, NSArray *resultScores))completion;
 
 @property (nonatomic, strong) NSArray *resultScores;
 

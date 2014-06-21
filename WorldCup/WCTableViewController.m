@@ -52,8 +52,10 @@
 {
     [super viewDidLoad];
  
-    [[ScoreController sharedInstance] getInfoCompletion:^(BOOL success) {
+    [[ScoreController sharedInstance] getInfoCompletion:^(BOOL success, NSArray *resultScore) {
         if (success) {
+            
+            self.HT1.text = [NSString stringWithFormat:@"%@", resultScore[2][@"away_team"][@"code"]];
             [self.tableView reloadData];
             
         } else {
@@ -61,7 +63,7 @@
         }
     }];
     
-    
+
 }
 
 - (void)didReceiveMemoryWarning

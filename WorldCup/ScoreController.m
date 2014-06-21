@@ -22,17 +22,18 @@
     
 }
 
-- (void)getInfoCompletion:(void (^)(BOOL success))completion {
+- (void)getInfoCompletion:(void (^)(BOOL success, NSArray *resultScores))completion {
     [[NetworkController api] GET:@"matches/today"
                       parameters:nil
                          success:^(NSURLSessionDataTask *task, id responseObject) {
-                             self.resultScores = responseObject[@"results"];
-                             completion(YES);
+                             self.resultScores = responseObject;
+                             NSLog(@"%@", self.resultScores);
+                             completion(YES, self.resultScores);
                          }
                          failure:^(NSURLSessionDataTask *task, NSError *error) {
-                             completion(NO);
+                             completion(NO, self.resultScores);
                          }];
-    NSLog(@"%@", self.resultScores[0]);
+    
 }
 
 @end
