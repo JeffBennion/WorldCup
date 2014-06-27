@@ -15,7 +15,7 @@
     static AFHTTPSessionManager *api = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        api = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://worldcup.sfg.io/"]];
+        api = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://worldcup.sfg.io"]];
         api.responseSerializer = [AFJSONResponseSerializer serializer];
         //api.requestSerializer = [AFJSONRequestSerializer serializer];
     });
@@ -23,12 +23,12 @@
 }
 
 
-//+ (NSDictionary *)parametersWithAPIKey:(NSDictionary *)parameters {
-//    
-//    NSMutableDictionary *parametersWithKey = [[NSMutableDictionary alloc] initWithDictionary:parameters];
-//    //[parametersWithKey setObject:API_KEY forKey:@"api_key"];
-//    
-//    return parametersWithKey;
-//}
++ (NSDictionary *)parametersWithAPIKey:(NSDictionary *)parameters {
+    
+    NSMutableDictionary *parametersWithKey = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    //[parametersWithKey setObject:API_KEY forKey:@"api_key"];
+    
+    return parametersWithKey;
+}
 
 @end

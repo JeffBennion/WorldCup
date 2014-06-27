@@ -9,6 +9,7 @@
 #import "WCTableViewController.h"
 #import "NetworkController.h"
 #import "ScoreController.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 
 @interface WCTableViewController ()
@@ -35,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *HomeScore3;
 @property (weak, nonatomic) IBOutlet UILabel *VisitingScore3;
 
+
 @end
 
 @implementation WCTableViewController
@@ -48,6 +50,14 @@
     return self;
 }
 
+- (NSURL *)urlForFlag:(NSString*)countryCode{
+    
+    NSString *flagAddress = [NSString stringWithFormat:@"http://img.fifa.com/imgml/flags/l/%@.gif", countryCode];
+    NSURL *flagURL = [NSURL URLWithString:flagAddress];
+    return flagURL;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,7 +65,30 @@
     [[ScoreController sharedInstance] getInfoCompletion:^(BOOL success, NSArray *resultScore) {
         if (success) {
             
-            self.HT1.text = [NSString stringWithFormat:@"%@", resultScore[2][@"away_team"][@"code"]];
+            self.HT1.text = [NSString stringWithFormat:@"%@", resultScore[0][@"home_team"][@"code"]];
+            self.HomeScore1.text = [NSString stringWithFormat:@"%@", resultScore[0][@"home_team"][@"goals"]];
+            [self.HomeImage1 setImageWithURL: [self urlForFlag:resultScore[0][@"home_team"][@"code"]]];
+            self.VT1.text = [NSString stringWithFormat:@"%@", resultScore[0][@"away_team"][@"code"]];
+            self.VisitingScore1.text = [NSString stringWithFormat:@"%@", resultScore[0][@"away_team"][@"goals"]];
+            self.Status1.text = [NSString stringWithFormat:@"%@", resultScore[0][@"status"]];
+            [self.VisitingImage1 setImageWithURL: [self urlForFlag:resultScore[0][@"away_team"][@"code"]]];
+            
+            self.HT2.text = [NSString stringWithFormat:@"%@", resultScore[1][@"home_team"][@"code"]];
+            self.HomeScore2.text = [NSString stringWithFormat:@"%@", resultScore[1][@"home_team"][@"goals"]];
+            [self.HomeImage2 setImageWithURL: [self urlForFlag:resultScore[1][@"home_team"][@"code"]]];
+            self.VT2.text = [NSString stringWithFormat:@"%@", resultScore[1][@"away_team"][@"code"]];
+            self.VisitingScore2.text = [NSString stringWithFormat:@"%@", resultScore[1][@"away_team"][@"goals"]];
+            self.Status2.text = [NSString stringWithFormat:@"%@", resultScore[1][@"status"]];
+            [self.VisitingImage2 setImageWithURL: [self urlForFlag:resultScore[1][@"away_team"][@"code"]]];
+            
+            self.HT3.text = [NSString stringWithFormat:@"%@", resultScore[2][@"home_team"][@"code"]];
+            self.HomeScore3.text = [NSString stringWithFormat:@"%@", resultScore[2][@"home_team"][@"goals"]];
+            [self.HomeImage3 setImageWithURL: [self urlForFlag:resultScore[2][@"home_team"][@"code"]]];
+            self.VT3.text = [NSString stringWithFormat:@"%@", resultScore[2][@"away_team"][@"code"]];
+            self.VisitingScore3.text = [NSString stringWithFormat:@"%@", resultScore[2][@"away_team"][@"goals"]];
+            self.Status3.text = [NSString stringWithFormat:@"%@", resultScore[2][@"status"]];
+            [self.VisitingImage3 setImageWithURL: [self urlForFlag:resultScore[2][@"away_team"][@"code"]]];
+            
             [self.tableView reloadData];
             
         } else {
