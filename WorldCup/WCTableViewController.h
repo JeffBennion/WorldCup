@@ -10,4 +10,6 @@
 
 @interface WCTableViewController : UITableViewController
 
+@property   (strong, nonatomic) NSArray *dataArray;
+
 @end

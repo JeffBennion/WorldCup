@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F597ED4195F2EAF007E6C28 /* WCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F597ED3195F2EAF007E6C28 /* WCTableViewCell.m */; };
 		1F5D8B7E1955EED8004E486B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5D8B7D1955EED8004E486B /* Foundation.framework */; };
 		1F5D8B801955EED8004E486B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5D8B7F1955EED8004E486B /* CoreGraphics.framework */; };
 		1F5D8B821955EED8004E486B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5D8B811955EED8004E486B /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F597ED2195F2EAF007E6C28 /* WCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCTableViewCell.h; sourceTree = "<group>"; };
+		1F597ED3195F2EAF007E6C28 /* WCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCTableViewCell.m; sourceTree = "<group>"; };
 		1F5D8B7A1955EED8004E486B /* WorldCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5D8B7D1955EED8004E486B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F5D8B7F1955EED8004E486B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				1F5D8B8C1955EED8004E486B /* WCAppDelegate.h */,
 				1F5D8B8D1955EED8004E486B /* WCAppDelegate.m */,
 				1F5D8B8F1955EED8004E486B /* Main.storyboard */,
+				1F597ED2195F2EAF007E6C28 /* WCTableViewCell.h */,
+				1F597ED3195F2EAF007E6C28 /* WCTableViewCell.m */,
 				ACF6C41D1956049400EA837C /* WCTableViewController.h */,
 				ACF6C41E1956049400EA837C /* WCTableViewController.m */,
 				1F5D8B921955EED8004E486B /* WCViewController.h */,
@@ -308,6 +313,7 @@
 			files = (
 				ACF6C42819560AC600EA837C /* ScoreController.m in Sources */,
 				1F5D8B941955EED8004E486B /* WCViewController.m in Sources */,
+				1F597ED4195F2EAF007E6C28 /* WCTableViewCell.m in Sources */,
 				1F5D8B8E1955EED8004E486B /* WCAppDelegate.m in Sources */,
 				1F5D8B8A1955EED8004E486B /* main.m in Sources */,
 				ACF6C41F1956049400EA837C /* WCTableViewController.m in Sources */,
@@ -437,9 +443,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorldCup/WorldCup-Prefix.pch";
 				INFOPLIST_FILE = "WorldCup/WorldCup-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -451,9 +459,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorldCup/WorldCup-Prefix.pch";
 				INFOPLIST_FILE = "WorldCup/WorldCup-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
